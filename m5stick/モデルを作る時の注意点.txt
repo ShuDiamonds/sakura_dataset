@@ -1,0 +1,12 @@
+
+
+1. codec に png を指定しないと、labelImgのxmlの画像サイズが正しく設定されない。
+for f in *.png; do ffmpeg -y -i $f -vcodec png $f; done
+
+
+2. Maix_Toolbox の images のフォルダには、png 入れたらダメ。jpg のみ
+
+3. 最新版のYolo-digit-detectorのrequirements.txt のkeras のバージョンがおかしい。
+
+ 
+
