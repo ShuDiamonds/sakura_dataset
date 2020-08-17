@@ -1,0 +1,26 @@
+<annotation>
+	<folder>outputimages_raw</folder>
+	<filename>tomita_M19033108291100061_036.jpg</filename>
+	<path>/Users/shusaku-to/m1gp/sakura_dataset/outputimages_raw/tomita_M19033108291100061_036.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>720</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sakura</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>29</xmin>
+			<ymin>125</ymin>
+			<xmax>467</xmax>
+			<ymax>357</ymax>
+		</bndbox>
+	</object>
+</annotation>
