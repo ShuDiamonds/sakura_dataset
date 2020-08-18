@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sakura Sensing</title>
+    <!-- meta -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- styles -->
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/yeti/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="{{url_for('static', filename='main.css')}}" rel="stylesheet" media="screen">
+    <!-- scripts -->
+    <script src="//code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="{{url_for('static', filename='main.js')}}" type="text/javascript"></script>
+
+    {% block css %}{% endblock %}
+  </head>
+  <body>
+  <div class="container_nav">
+    {% include "navigation.html" %}
+  </div>
+
+
+    <!-- child template -->
+    {% block content %}{% endblock %}
+
+    <br>
+
+
+    {% block js %}{% endblock %}
+
+  </body>
+</html>

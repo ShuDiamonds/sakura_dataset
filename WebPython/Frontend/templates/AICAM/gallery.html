@@ -1,0 +1,42 @@
+<main>
+<link href="{{url_for('static', filename='AICAM.css')}}" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
+<div class="notification_bar">
+  Welcome
+</div>
+<!-- ここからAICAMの内容 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue-image-lightbox@6.4.0/dist/vue-image-lightbox.min.css">
+<script src="https://cdn.jsdelivr.net/npm/vue-image-lightbox@6.4.0/dist/vue-image-lightbox.min.js"></script>
+<script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
+
+<div id="AICAMapp">
+  <ul>
+    <li v-for="(img,i) in images" @click="show(i)"><img :src="img.thumb"></li>
+  </ul>
+  <light-box
+    ref="lightbox"
+    :images="images"
+    :show-light-box="false"
+    :show-caption="true"></light-box>
+</div>
+
+<!-- ここまでAICAMの内容 -->
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@0.7.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@1.8.0"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script> -->
+<script type="text/javascript" src={{url_for('static', filename='main.js')}} ></script>
+<script type="text/javascript" src={{url_for('static', filename='AICAM.js')}} ></script>
+
+</main>

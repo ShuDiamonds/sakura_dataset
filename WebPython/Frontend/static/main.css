@@ -1,0 +1,155 @@
+/* custom styles */
+:root {
+  --main-elements-color: #8BD9B4;
+  --main-elements_word-color: #C4D7D1;
+  --main-base-color: #FEFEFE;
+  --main-main-color: #C4D7D1;
+  --main-accent-color: #F2BB16;
+
+  --navbar-color: #025959;
+  --notification_bar-color: #038C8C;
+  --selectbox-color: #C4D7D1;
+}
+.navbar{
+  background-color:var(--navbar-color);
+}
+.notification_bar {
+  background-color: var(--notification_bar-color);
+  color: white;
+}
+.devicelist select{
+  background-color:var(--selectbox-color);
+  border-color:#FEFEFE;
+}
+body {
+  font-style: 'Meiryo', sans-serif;
+  background-color: var(--main-base-color);
+}
+.container_nav{
+  margin-bottom: 45px;
+}
+
+@media screen and (max-width: 2024px){
+  /* 1024px 以下で適用する内容（パソコン）*/
+  .flexbox {
+      display: flex;
+  }
+  .eyecatch_pic {
+    height: 400px;
+    width: auto;
+    background: url( '/static/images/site/main/eyecatch.png'),#2b3137;
+    background-position: center 10%;
+    background-size: cover;
+
+  }
+  .eyecatch_pic p {
+    font-size: 6rem;
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    background-color:black;
+    opacity: 60%;
+    text-gn:center;
+  }
+  /* ficy_firstmessage styles */
+  .py-sm-8 {
+      margin-top:0px;
+      margin-left: 0px;
+      margin-right: 0px;
+      padding-top: 124px!important;
+      padding-bottom: 64px!important;
+  }
+  .jumbotron-codelines {
+      width:100%;
+      color: hsla(0,0%,100%,.6);
+      background: url( '/static/images/site/main/simple-codelines.svg'),#2b3137;
+  /*    background: url( {{url_for('/static/images/site/main/', filename='simple-codelines.svg')}}),#2b3137;*/
+      background-position: center 10%;
+      background-size: cover;
+  }
+  .ficy_firstmessage {
+    color:white;
+    width:45%;
+    padding-top: 12px;
+    padding-right: 2rem;
+    padding-left: 4rem;
+  }
+  .ficy_firstmessage h1{
+    font-family: "Kokoro";
+  }
+  /* welcomebox styles*/
+  .welcomebox {
+    background-color: white;
+    width:55%;
+    height: 55%;
+    text-gn:center;
+    border: 1px solid #778899;
+    margin: 30px 40px;
+    color:black;
+  }
+  .welcomebox img{
+    width:100%;
+    height: 40%;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* 480px 以下で適用する内容(スマホ) */
+  .flexbox {
+    display: flex;
+    flex-direction: column;
+    ustify-content: center;
+    gn-items: center;
+  }
+  /* ficy_firstmessage styles */
+  .py-sm-8 {
+      margin-top:0px;
+      margin-left: 0px;
+      margin-right: 0px;
+      padding-top: 24px!important;
+      padding-bottom: 14px!important;
+  }
+  .jumbotron-codelines {
+      width:100%;
+      color: hsla(0,0%,100%,.6);
+      background: url( '/static/images/site/main/simple-codelines.svg'),#2b3137;
+  /*    background: url( {{url_for('/static/images/site/main/', filename='simple-codelines.svg')}}),#2b3137;*/
+      background-position: center 10%;
+      background-size: cover;
+  }
+  .eyecatch_pic {
+    height: 200px;
+    width: auto;
+    background: url( '/static/images/site/main/eyecatch.png'),#2b3137;
+    background-position: center 10%;
+    background-size: cover;
+
+  }
+  .eyecatch_pic p {
+    font-size: 4rem;
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    background-color:black;
+    opacity: 60%;
+    text-gn:center;
+  }
+  .flexbox.ficy_firstmessage {
+     width: 100%;
+     margin: 0 auto;
+  }
+  .ficy_firstmessage {
+    color:white;
+    width: 100%;
+    padding-top: 12px;
+    padding-right: 2rem;
+    padding-left: 4rem;
+  }
+  .ficy_firstmessage h1{
+    font-family: "Kokoro";
+  }
+  .flexbox.welcomebox {
+    width: 100%;
+  }
+  .welcomebox img{
+    width:100%;
+    height: 40%;
+  }
+}
