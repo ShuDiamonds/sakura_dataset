@@ -23,14 +23,14 @@ if __name__ == '__main__':
     print("##################### check xml files")
     for i,xmlfilename in enumerate(xmlfiles):
         if not xmlfilename in imgfiles:
-            print( "Error: "+xmlfilename+ "."+imgfiles_exts[i] +" are not found. Please search it, or delete "+xmlfilename)
+            print( "Error: "+xmlfilename+ ".png/jpg are not found. Please search it, or delete "+xmlfilename+".png/jpg")
         #######
         with open(xmlfolderpath+xmlfilename+".xml") as f:
             rawfile = f.read()
         #print(xmlfilename)
         #print(rawfile)
         #print(re.findall("<width>\d{1,4}</width>",rawfile))
-        print(re.findall("<xmax>\d{1,4}</xmax>",rawfile))
+        #print(re.findall("<xmax>\d{1,4}</xmax>",rawfile))
         if len(re.findall("<xmax>\d{1,4}</xmax>",rawfile))==0:
             print("ERROR: xml file exists, but No anottation on ",xmlfilename)
         width=int(re.sub(r"\D", "", re.findall("<width>\d{1,4}</width>",rawfile)[0])  )
