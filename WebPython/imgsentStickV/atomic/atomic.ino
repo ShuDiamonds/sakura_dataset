@@ -29,10 +29,10 @@ String password_TH = "";
 boolean Settingmodestate = false;
 
 //TCP
-const char* ssid     = "eoRT-1584b9f-g";
-const char* password = "3bc2d20f14cac9";
-//const char *ssid = "p30_hacking";
-//const char *password = "0000a@lo";
+const char* ssid     = "";
+const char* password = "";
+//const char *ssid = "";
+//const char *password = "";
 
 char host[20] = "192.168.0.9";
 int port = 44446;
@@ -210,59 +210,7 @@ unsigned int IntoSleep() {
   }
   return cnt;
 }
-void get_server_ip() {
-  // Get server global IP adress
-  HTTPClient http;
-  Serial.println(F("get_server_ip"));
 
-
-  http.begin("http://ficy.herokuapp.com/get_my_ip/?mac=" + getMacAddress());
-  int httpCode = http.GET();
-  if (httpCode > 0) {
-    String response = http.getString();
-    response.trim();
-    response.toCharArray(host, response.length() + 1 );
-    Serial.print(F("TCP Server IP is "));
-    Serial.println(host);
-  } else {
-    Serial.print(F("Not found server ip"));
-    Serial.println(httpCode);
-    Serial.println(http.getString());
-    Serial.println( http.errorToString(httpCode).c_str());
-    delay(1000);
-    esp_restart();
-  }
-  http.end();
-}
-void send_mailadress_withPOST(String mailad) {
-  //  prefs.begin("wifisetting", false);
-  Serial.print(F("MACadress:"));
-  Serial.println(getMacAddress());
-
-  const int capacity = JSON_OBJECT_SIZE(4);
-  //StaticJsonDocument<capacity> json_request;
-  StaticJsonDocument<400> json_request;
-  char buffer[400];
-  HTTPClient http;
-  const char *host = "http://ficy.herokuapp.com/dm/";
-  http.begin(host);
-  http.addHeader("Content-Type", "application/json");
-  json_request["ma"] = getMacAddress();
-  json_request["m"] = mailad;
-  json_request["T"] = "aic";
-  json_request["p"] = "s*i_09--*0s*a";
-  serializeJson(json_request, Serial);
-  Serial.println("");
-  serializeJson(json_request, buffer, sizeof(buffer));
-
-  int status_code = http.POST((uint8_t*)buffer, strlen(buffer));
-  //  json.toCharArray(buffer, sizeof(json));
-  //  buffer=json.c_str();
-  //  Serial.println(buffer);
-  //int status_code = http.POST( (json.c_str()) );
-  Serial.printf("status_code=%d\r\n", status_code);
-  http.end();
-}
 void setup() {
 
   M5.begin(true, false, true);
@@ -308,14 +256,7 @@ void setup() {
   Serial.print("Mac:");
   Serial.println(getMacAddress());
   
-  // Get server global IP adress
-  get_server_ip();
-  prefs.begin("wifisetting", false);
-  String mailad = prefs.getString("mail", "");
-  prefs.end();
-  if ((String)"" != mailad) {
-    send_mailadress_withPOST(mailad);
-  }
+  
   delay(140);
 
   Serial.println("start sending video");
