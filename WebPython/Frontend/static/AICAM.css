@@ -1,0 +1,56 @@
+.navbar{
+  background-color:var(--navbar-color);
+}
+.notification_bar {
+  background-color: var(--notification_bar-color);
+  color: white;
+}
+.devicelist select{
+  background-color:var(--selectbox-color);
+}
+/* custom styles */
+.notification_bar {
+  height:20px;
+  text-align: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding-left: 3rem;
+}
+.devicelist {
+  font-size:12px;
+  border:1px;
+  justify-content: right;
+  text-align: right;
+  margin-right: 1.5rem;
+  align-items: flex-end;
+}
+
+
+#AICAMapp {
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  transition: all 0.2s;
+}
+
+li {
+  display:inline-block;
+  border:1px solid #ddd;
+  margin: 5px;
+}
+
+@media screen and (max-width: 2024px){
+  .fishing_map{
+    height: 420px;
+    border-bottom: 3px solid gray;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .fishing_map{
+    height: 420px;
+    border-bottom: 3px solid gray;
+  }
+}
