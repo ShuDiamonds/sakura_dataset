@@ -34,7 +34,7 @@ const char* password = "";
 //const char *ssid = "";
 //const char *password = "";
 
-char host[20] = "192.168.0.9";
+char host[20] = "192.168.0.7";
 int port = 44446;
 
 static const uint8_t packet_begin[3] = { 0xFF, 0xD8, 0xEA };
@@ -225,8 +225,11 @@ void setup() {
 
   //不揮発性メモリに保存された内容を確認
   prefs.begin("wifisetting", false);
-  ssid_TH = prefs.getString("ssid_TH" , ""); //登録されていない場合””空文字が入る
-  password_TH = prefs.getString("pw_TH" , "");
+//  ssid_TH = prefs.getString("ssid_TH" , ""); //登録されていない場合””空文字が入る
+//  password_TH = prefs.getString("pw_TH" , "");
+  ssid_TH = prefs.getString("wifi_ssid" , ""); //登録されていない場合””空文字が入る
+  password_TH = prefs.getString("wifi_pw" , "");
+  
   prefs.end();
 
   Serial1.begin(9600, SERIAL_8N1, 22, -1);
