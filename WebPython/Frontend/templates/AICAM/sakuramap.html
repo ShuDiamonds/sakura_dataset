@@ -1,0 +1,25 @@
+<main>
+<link href="{{url_for('static', filename='sakuramap.css')}}" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
+<div class="notification_bar">
+  Welcome
+</div>
+<!-- ここから sakuramap の内容 -->
+<div class="sakura_map" id="sakura_map">
+</div>
+
+<!-- ここまで sakuramap の内容 -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script> -->
+<script type="text/javascript" src={{url_for('static', filename='main.js')}} ></script>
+<script type="text/javascript" src={{url_for('static', filename='sakuramap.js')}} ></script>
+
+</main>

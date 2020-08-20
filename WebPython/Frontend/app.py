@@ -29,6 +29,8 @@ def filelist_os():
         jsonlist=list()
         macadresslists = os.listdir("./static/reciv_data/")
         for MacAdress in macadresslists:
+            if MacAdress==".DS_Store":
+                continue
             filelists = [MacAdress+"/"+x for x in os.listdir("./static/reciv_data/{0}/".format(MacAdress))]
             jsonlist.extend(filelists)
 

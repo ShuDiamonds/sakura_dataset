@@ -1,0 +1,37 @@
+.navbar{
+  background-color:var(--navbar-color);
+}
+.notification_bar {
+  background-color: var(--notification_bar-color);
+  color: white;
+}
+
+/* custom styles */
+.notification_bar {
+  height:20px;
+  text-align: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding-left: 3rem;
+}
+li {
+  display:inline-block;
+  border:1px solid #ddd;
+  margin: 5px;
+}
+
+@media screen and (max-width: 2024px){
+  .sakura_map{
+    height: 420px;
+    border-bottom: 3px solid gray;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sakura_map{
+    height: 420px;
+    border-bottom: 3px solid gray;
+  }
+}

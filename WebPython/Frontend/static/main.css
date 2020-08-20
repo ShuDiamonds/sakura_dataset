@@ -6,8 +6,8 @@
   --main-main-color: #C4D7D1;
   --main-accent-color: #F2BB16;
 
-  --navbar-color: #025959;
-  --notification_bar-color: #038C8C;
+  --navbar-color: black;
+  --notification_bar-color: gray;
   --selectbox-color: #C4D7D1;
 }
 .navbar{
