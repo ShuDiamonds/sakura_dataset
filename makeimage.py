@@ -4,7 +4,7 @@ import os
 outputpath="./outputimages_raw/"
 os.makedirs(outputpath,exist_ok=True)
 
-moviepath="./movie/1111b/190407/" # 最後の「/」を忘れない！
+moviepath="./movie/4444b/190407/" # 最後の「/」を忘れない！
 date=moviepath.split('/')[-2]
 carnum=moviepath.split('/')[-3]
 print(moviepath.split('/'))

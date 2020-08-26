@@ -6,7 +6,7 @@ import re
 from PIL import Image
 
 if __name__ == '__main__':
-    xmlfolderpath = "./annotations/"
+    xmlfolderpath = "./ano_tmp/"
 
     imgfilepath = "./images/"
 
@@ -21,6 +21,7 @@ if __name__ == '__main__':
     #print(xmlfiles)
     #print(imgfiles)
     print("##################### check xml files")
+    print(len(xmlfiles),len(imgfiles))
     for i,xmlfilename in enumerate(xmlfiles):
         if not xmlfilename in imgfiles:
             print( "Error: "+xmlfilename+ "."+imgfiles_exts[i] +" are not found. Please search it, or delete "+xmlfilename)

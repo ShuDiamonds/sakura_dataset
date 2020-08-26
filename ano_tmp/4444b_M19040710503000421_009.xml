@@ -1,0 +1,26 @@
+<annotation>
+	<folder>outputimages_raw</folder>
+	<filename>4444b_M19040710503000421_009.jpg</filename>
+	<path>/Users/shusaku-to/m1gp/sakura_dataset/outputimages_raw/4444b_M19040710503000421_009.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>720</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sakura</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>841</xmin>
+			<ymin>192</ymin>
+			<xmax>1218</xmax>
+			<ymax>384</ymax>
+		</bndbox>
+	</object>
+</annotation>
