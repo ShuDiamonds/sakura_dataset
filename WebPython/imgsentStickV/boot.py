@@ -22,7 +22,7 @@ sensor.set_windowing((224, 224))
 sensor.run(1)
 sensor.skip_frames()
 
-modelpath="/sd/fish_detect_v01.kmodel"
+modelpath="/sd/sakura_model_v01.kmodel"
 
 fm.register(35, fm.fpioa.UART1_TX, force=True)
 fm.register(34, fm.fpioa.UART1_RX, force=True)
@@ -40,7 +40,8 @@ def CreateDatapacket(datasize,filename="hoge.jpg"):
     data_packet = bytearray([0xFF,0xD8,0xEA,0x01,data_size1,data_size2,data_size3,0x00,0x00,0x00]+padding)
     return data_packet
 
-classes = ["smallfish","mebaru","azi","hugu","ishidai","kasago","bera","kawahagi","tai","hamati","kurodai","kisu","gure","sayori","suzuki"]
+#classes = ["smallfish","mebaru","azi","hugu","ishidai","kasago","bera","kawahagi","tai","hamati","kurodai","kisu","gure","sayori","suzuki"]
+classes = ["sakura"]
 print(uos.listdir("/sd/") )
 
 # KPU setting
@@ -50,11 +51,12 @@ try:
 except:
     kpu.deinit(task)
     task = kpu.load(modelpath)
-kpu.set_outputs(task, 0,7,7,100)#Reshape層の内容に応じて中身を変える必要がある #the actual shape needs to match the last layer shape of your model(before Reshape)
+#kpu.set_outputs(task, 0,7,7,100)#Reshape層の内容に応じて中身を変える必要がある #the actual shape needs to match the last layer shape of your model(before Reshape)
+kpu.set_outputs(task, 0,7,7,30)
 anchor = (0.57273, 0.677385, 1.87446, 2.06253, 3.33843, 5.47434, 7.88282, 3.52778, 9.77052, 9.16828)
 kpu.init_yolo2(task, 0.3, 0.3, 5, anchor)
 
-pic_filepath="/sd/fish_pic"
+pic_filepath="/sd/sakura_pic"
 try:
     uos.mkdir(pic_filepath)
 except:
